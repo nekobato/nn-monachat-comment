@@ -102,3 +102,9 @@ dist
 
 # TernJS port file
 .tern-port
+
+react/
+nn-monachat-comment.js
+nn-monachat-comment.js.map
+nn-monachat-comment.d.ts
+nn-monachat-comment.d.ts.map

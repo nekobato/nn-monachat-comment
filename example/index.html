@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="../nn-monachat-comment.js"></script>
+    <title>Document</title>
+    <style>
+      html {
+        min-height: 100%;
+      }
+      body {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      h1 {
+        margin: 0 auto auto;
+      }
+      .text-input {
+        width: 320px;
+        padding: 4px;
+        font-size: 16px;
+      }
+      nn-monachat-comment {
+        margin: auto;
+      }
+      .position {
+        display: inline-flex;
+        margin-top: 400px;
+        padding: 4px;
+        border: 1px solid #888;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>nn-monachat-comment</h1>
+    <form id="form">
+      <input type="text" id="text" class="text-input" />
+      <button type="submit">送信</button>
+    </form>
+    <nn-monachat-comment from="#root_position" to="300" onended="this.remove()"
+      >こん＾＾　どこ住み？　ラインやってる？</nn-monachat-comment
+    >
+    <div id="root_position" class="position">
+      起点氏
+    </div>
+    <script defer>
+      document.querySelector('#form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const commentElement = document.createElement('nn-monachat-comment');
+        commentElement.setAttribute('from', '#root_position');
+        commentElement.setAttribute('to', '300');
+        commentElement.addEventListener('ended', () => {
+          commentElement.remove();
+        });
+        commentElement.innerText = document.querySelector('#text').value;
+        document.body.appendChild(commentElement);
+        document.querySelector('#text').value = '';
+      });
+    </script>
+  </body>
+</html>
