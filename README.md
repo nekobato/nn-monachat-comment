@@ -1,6 +1,10 @@
+
+
 # nn-monachat-comment
 
 例のチャットのコメントバブル
+
+![Kapture 2021-07-09 at 01 29 37](https://user-images.githubusercontent.com/861170/124959292-06c03080-e056-11eb-860e-9f00be19a4b0.gif)
 
 ## Attributes
 
